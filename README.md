@@ -1,6 +1,30 @@
-# Secure Conflict-free Replicated Data Types
+# SecureCRDT
 
-Privacy-preserving implementation of CRDT's built with a MPC-based approach.
+This project implements a CRDT replica where data is encrypted with secret sharing and all operations over the data are done using secure multiparty protocols. This replica, if correctly deployed, enures that a single malicious hosting provider does not learn the contents of the data in the CRDT.
+
+Currently, we support there secure implementation of the following CRDTs:
+
+- Last Write Wins Register
+- Max Value
+- Positive Negative Counter
+- Bounder Counter
+- Grow Only Counter
+- Grow Only Set
+
+# System Architecture
+
+A SecureCRDT Replica consists of three independent SMPC parties. Each SMPC party must be hosted in an independent trust domain (e.g: Cloud Provider).
+A client that issue two operations to a replica:
+1. an `update` request to add or update a data value in a CRDT.
+2. a`query` operations on the retrieve the value in a CRDT
+
+For each `update` operation, the client uses a secret share algorithm to encode the data and sends one share to each party. Therefore, no party has access to the plaintext value, and a malicious provider can not learn the contents of the CRDT.
+
+To ensure data is consistent and to provide a correct result for `update` operations, the replica operates over the secret shared data by using multi-party protocols.
+
+![System Architecture](docs/architechture.png)
+
+
 
 
 # How to install
