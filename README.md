@@ -71,7 +71,7 @@ $ java -cp /$PATH-TO-PROJECT-HOME/SecureCRDT/target/SecureCRDT-1.0.jar pt.uporto
 
 Secondly, initiate a CRDT client. This client provides an HTTP server that our [benchmark implementation](https://github.com/SecureCRDT/Benchmark) uses to measure the performance of the SecureCRDT system.
 
-The client can be initiated by specifying which CRDT replica will be used. Replace the placeholder variable `$CRDT with one of the following types:
+The client can be initiated by specifying which CRDT replica will be used. Replace the placeholder variable `$CRDT` with one of the following types:
 
 - register
 - gcounter 
