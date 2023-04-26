@@ -5,7 +5,7 @@
 
 This project implements a server/replica that supports multiple conflict-free replicated data types (CRDT) where data is encrypted with secret sharing and all operations are done using secure multiparty computation (SMPC) protocols. This replica, if correctly deployed, enures that a single malicious hosting provider does not learn the contents of the data in the CRDT.
 
-Multiple replicas can be deployed with this project in an arbitrary network configuration. Currently, we support there secure implementation of the following CRDTs:
+Multiple replicas can be deployed with this project in an arbitrary network configuration. Currently, we support the secure implementation of the following CRDTs:
 
 - Last Write Wins Register
 - Max Value
