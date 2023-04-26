@@ -71,7 +71,7 @@ $ java -cp /$PATH-TO-PROJECT-HOME/SecureCRDT/target/SecureCRDT-1.0.jar pt.uporto
 
 Secondly, initiate a CRDT client. This client provides an HTTP server that our [benchmark implementation](https://github.com/SecureCRDT/Benchmark) uses to measure the performance of the SecureCRDT system.
 
-The client can be initiated by specifying which CRDT replica will be used. Replace $CRDT with one of the following types:
+The client can be initiated by specifying which CRDT replica will be used. Replace the placeholder variable `$CRDT with one of the following types:
 
 - register
 - gcounter 
@@ -89,7 +89,7 @@ $ java -cp /$PATH-TO-PROJECT-HOME/SecureCRDT/target/SecureCRDT-1.0.jar pt.uporto
 
 The `distributed` deployment has an additional step to the `local` deployment. Before deploying the SMPC parties, you need to define their IPs and recompile the project.
 
-First, start than by updating the IPs of the host machines used for each SMPC party in the [Standards.java](https://github.com/SecureCRDT/SecureCRDT/blob/main/src/main/java/pt/uporto/dcc/securecrdt/util/Standards.java) file. Afterwards, recompile the project.
+First, start by updating the IPs of the host machines used for each SMPC party in the [Standards.java](https://github.com/SecureCRDT/SecureCRDT/blob/main/src/main/java/pt/uporto/dcc/securecrdt/util/Standards.java) file. Afterwards, recompile the project.
 
 ```shell
 $ mvn package
@@ -100,7 +100,7 @@ Secondly, initiate the SMPC players, one in each hosts in a distributed setting,
 $ java -cp /$PATH-TO-PROJECT-HOME/SecureCRDT/target/SecureCRDT-1.0.jar pt.uporto.dcc.securecrdt.crdt.CrdtPlayer $PLAYERID distributed &
 ```
 
-Finally, initiate the the CRDT proxy in an additional separate host.
+Finally, initiate the the CRDT client in an additional separate host.
 
 ```shell
 $ java -cp /$PATH-TO-PROJECT-HOME/SecureCRDT/target/SecureCRDT-1.0.jar pt.uporto.dcc.securecrdt.client.Client $CRDT local
